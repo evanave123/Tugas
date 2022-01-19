@@ -13,11 +13,14 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+                            });
+//Route::get('/', 'BerandaController@index' );
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
 
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('user/index', 'UserController@index');
@@ -28,6 +31,16 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::put('user/update/{id}', 'UserController@update');
 
     Route::get('user/hapus/{id}', 'UserController@hapus');
+
+
+    Route::get('buku/index', 'BukuController@index');
+
+    Route::get('buku/tambah', 'BukuController@tambah');
+    Route::post('buku/simpan', 'BukuController@simpan');
+
+    Route::get('buku/edit/{id}', 'BukuController@edit');
+    Route::put('buku/update/{id}', 'BukuController@update');
+    Route::get('buku/hapus/{id}', 'BukuController@hapus');
     
 });
 

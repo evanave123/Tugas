@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">$nama_tombol</div>
+                <div class="card-header">{{ $nama_tombol }} DATA</div>
 
                 <div class="card-body">
 
@@ -34,7 +34,7 @@
                             <span class="text-helper">{{ $errors->first('password_confirmation') }}</span>
                         </div>
 
-                        {!! Form::submit($nama_tombol, ['class' => 'btn btn-primary']) !!}
+                        {!! Form::submit( $nama_tombol , ['class' => 'btn btn-primary']) !!}
                         {!! Form::close() !!}
                 </div>
             </div>

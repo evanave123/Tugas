@@ -8,15 +8,18 @@
                 <div class="card-header">Dashboard</div>
 
                 <div class="card-body">
-                    <h3> Data User </h3>
-                    <a href="{{ url('admin/user/tambah', []) }}" class="btn btn-primary btn-sm">Tambah</a>
+                    <h3> Library </h3>
+                    <a href="{{ url('admin/buku/tambah', []) }}" class="btn btn-primary btn-sm">Tambah</a>
+                    
                         <table class="table table-hover table-bordered">
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Nama</th>
-                                    <th>Email</th>
-                                    <th>Tanggal Buat</th>
+                                    <th>Judul</th>
+                                    <th>Pengarang</th>
+                                    <th>Created</th>
+                                    <th>Last Updated</th>
+
 
                                     <th>Ubah</th>
                                     
@@ -26,15 +29,16 @@
                                 @foreach ($utama as $item)
                                 <tr>
                                     <td>{{  $loop->iteration }}</td>
-                                    <td>{{  $item->name }}</td>
-                                    <td>{{  $item->email }}</td>
+                                    <td>{{  $item->judul }}</td>
+                                    <td>{{  $item->pengarang }}</td>
                                     <td>{{  $item->created_at }}</td>
+                                    <td>{{  $item->updated_at }}</td>
 
                                     <td>
-                                        <a href="{{ url('admin/user/edit/'. $item->id, []) }}" class="btn 
+                                        <a href="{{ url('admin/buku/edit/'. $item->id, []) }}" class="btn 
                                             btn-info btn-sm">
                                             Edit</a>
-                                            <a href="{{ url('admin/user/hapus/'. $item->id, []) }}" class="btn 
+                                            <a href="{{ url('admin/buku/hapus/'. $item->id, []) }}" class="btn 
                                                 btn-danger btn-sm" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">
                                                 Hapus</a>
                                     </td>

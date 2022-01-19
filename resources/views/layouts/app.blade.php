@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{  asset('bizland') }}/{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -36,6 +36,9 @@
                         @auth
                             <li class="nav-item">
                                 <a href="{{ url('admin/user/index', []) }}" class="nav-link">Data User</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url('admin/buku/index', []) }}" class="nav-link">Data Buku</a>
                             </li>
                         @endauth
                     </ul>
